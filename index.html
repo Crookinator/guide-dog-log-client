@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Guide Dog Log</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -11,7 +11,37 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body>
-      <h1>Browser Template</h1>
-    </body>
+		<body>
+			<h1>Guide Dog Log</h1>
+			
+			<section>
+				<div class='container--custom global-spacing--large'>
+					<h3 aria-live='assertive' class='h3' id='userAlert'></h3>
+				</div>
+				<form class='container--custom global-spacing--large'  id="signUpForm" name="signUpForm">
+					<fieldset>
+						<legend>Sign up</legend> <label for="signUpEmail">Email</label> <input required="" id="signUpEmail" type="email" name="credentials[email]"> <label for="signUpPassword">Password</label> <input required="" id="signUpPassword" type="password" name="credentials[password]" placeholder="Password"> <label for="signUpPassword_confirmation">Password Confirmation</label> <input required="" id="signUpPassword_confirmmation" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password"> <input class='uiButton' type="submit"value='Sign up'> <input type='button' class='uiButton' id='showSignIn' value='Sign in'>
+					</fieldset>
+				</form>
+			</section>
+		
+			<section>
+				<form class='container--custom global-spacing--large' id="signInForm" name="signInForm">
+					<fieldset>
+						<legend>Sign in</legend> <label for="signInEmail">Email</label> <input required="" id="signInEmail" type="email" name="credentials[email]" placeholder="Email"> <label for="signInPassword">Password</label> <input required="" id="signInPassword" type="password" name="credentials[password]" placeholder="Password"> <input class='uiButton' type="submit"value='Sign in'> <input class='uiButton' type='button' id='showSignUp' value='Sign up'>
+					</fieldset>
+				</form>
+			</section>
+			<section>
+				<form class='container--custom global-spacing--large' id="changePasswordForm" name="changePasswordForm">
+					<fieldset>
+						<legend>Change Password</legend> <label for="oldPassword">Old Password:</label><input required="" id="oldPassword" type="password" name="passwords[old]" placeholder="Old Password">  <label for="newPassword">New Password:</label><input required="" id='newPassword' type="password" name="passwords[new]" placeholder="New Password"> <input class='uiButton' type="submit" value="Change Password"> <input type='button' class='uiButton' id='formHomeBtn' value='Home'>
+					</fieldset>
+				</form>
+			</section>
+			
+			
+			
+			
+		</body>
 </html>

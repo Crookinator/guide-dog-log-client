@@ -1,1 +1,66 @@
 @import '~bootstrap/scss/bootstrap';
+
+* {
+box-sizing: border-box;
+}
+body {
+# background: #43464B;
+}
+
+#gameHeader {
+position: relative;
+# background: #000000;
+# color: #FFFFFF;
+}
+
+.uiButton {
+display: block;
+width: 100%;
+# background: #000;
+# color: #FFFF00;
+# border-width: 2px solid #FFFF00;
+min-height: 20px;
+padding: 10px;
+max-width: 500;
+margin: 5px;
+}
+
+.container {
+ height: 50vh;
+}
+
+.container--custom {
+max-width: 1150px;
+margin: 0 auto;
+padding: 100 0 100 0; 
+}
+
+.global-spacing--large {
+margin-top: 50px;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'],
+input[type='button'],
+input[type='submit'] {
+min-height: 20px;
+padding: 10px;
+max-width: 500px;}
+label {
+font-size: 16px;
+font-weight: bold;
+legend {
+font-size: 25px;
+font-weight: bold;
+}
+fieldset > * {
+display: block;
+width: 100%;
+}
+h3,
+.h3 {
+font-size: 18px;
+font-weight: bold;
+}
+

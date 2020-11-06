@@ -5,9 +5,7 @@ const store = require('./../store')
 
 // what happens when the sign up is successful
 const signUpSuccess = function(res) {
-	console.log('signed up')
-	console.log(res)
-	$('#userAlert').text('Sign-Up Successful!')
+	$('#userAlert').text('Sign-Up Successful! Please Click sign-in to continue.')
 }
 
 // what happens with a sign up failure
@@ -19,9 +17,8 @@ const signUpFailure = function(error) {
 const signInSuccess = function(res) {
   // save the user in the api response to the store object
   store.user = res.user
-	console.log(store.user)
 	$('#userAlert').text('Sign-in Successful!')
-	$('#signOutForm').show()
+	$('#signOutBtn').show()
 	$('#signInForm').trigger('reset')
 }
 
@@ -58,6 +55,7 @@ const resetForms = () => {
 	$('#changePasswordForm').hide()
 	$('#changePasswordForm').hide()
 	$('#signUpForm').hide()
+	$('#signOutBtn').hide()
 	$('#signInForm').show().trigger('reset')
 }
 

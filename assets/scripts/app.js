@@ -13,7 +13,7 @@ $(() => {
 	$('#signUpForm').on('submit', authEvents.onSignUp)
 	$('#signInForm').on('submit', authEvents.onSignIn)
 	$('#changePasswordForm').on('submit', authEvents.onChangePassword)
-	$('#signOutForm').on('submit', authEvents.onSignOut)
+	$('#signOutBtn').on('click', authEvents.onSignOut)
 	$('#showSignUp').on('click', uiAuth.onShowSignUp)
 	$('#showSignIn').on('click', uiAuth.resetForms)
 	

@@ -12,7 +12,10 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
 		<body>
-			<h1>Guide Dog Log</h1>
+			<header>
+				<h1>Guide Dog Log</h1>
+				<p>A forum for guide dog owners to share their thoughts.</p>
+			</header>
 			
 			<section>
 				<div class='container--custom global-spacing--large'>
@@ -40,8 +43,18 @@
 				</form>
 			</section>
 			
+<!--UI Buttons -->
+			<div class="container-fluid row">
 			
-			
+				<section class='container--custom global-spacing--large col-lg-4' id='inAppUi'>
+					<input type='button' class='uiButton' id='uiHomeBtn' value='Home'>
+					<input type='button' class='uiButton' id='createNewPost' value='Create New Post'>
+					<input type='button' class='uiButton' id='indexPosts' value='See All Posts'>
+					<input type='button' class='uiButton' id='showChangePassword' value='Change Password'>
+					<input class='uiButton' id="signOutBtn" type="button" value='Sign out'>
+				</section>
+				<div id='post-display' class="container col-lg-8"></div>
+			</div>
 			
 		</body>
 </html>

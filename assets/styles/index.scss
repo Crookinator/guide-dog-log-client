@@ -1,24 +1,16 @@
 @import '~bootstrap/scss/bootstrap';
-
 * {
 box-sizing: border-box;
-}
-body {
-# background: #43464B;
 }
 
 #gameHeader {
 position: relative;
-# background: #000000;
-# color: #FFFFFF;
 }
 
 .uiButton {
 display: block;
 width: 100%;
-# background: #000;
-# color: #FFFF00;
-# border-width: 2px solid #FFFF00;
+border-width: 2px solid #FFFF00;
 min-height: 20px;
 padding: 10px;
 max-width: 500;
@@ -29,6 +21,8 @@ margin: 5px;
  height: 50vh;
 }
 
+
+
 .container--custom {
 max-width: 1150px;
 margin: 0 auto;
@@ -37,6 +31,9 @@ padding: 100 0 100 0;
 
 .global-spacing--large {
 margin-top: 50px;
+}
+.global-spacing--small {
+margin-top: 20px;
 }
 
 input[type='text'],
@@ -50,7 +47,9 @@ max-width: 500px;}
 label {
 font-size: 16px;
 font-weight: bold;
+color: #FFF;}
 legend {
+color: #FFF;
 font-size: 25px;
 font-weight: bold;
 }
@@ -60,7 +59,12 @@ width: 100%;
 }
 h3,
 .h3 {
+color: #FFF;
 font-size: 18px;
 font-weight: bold;
 }
+
+#gameBoard .board{
+background-image: url("https://wallpapercave.com/wp/wp2116376.jpg");
+background-size: cover;}
 

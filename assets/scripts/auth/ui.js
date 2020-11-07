@@ -1,16 +1,16 @@
 'use strict' 
-
-
+// require store for saving information into the store object
 const store = require('./../store')
 
 // what happens when the sign up is successful
 const signUpSuccess = function(res) {
-	$('#userAlert').text('Sign-Up Successful! Please Click sign-in to continue.')
+	$('#userAlert').text('Sign Up Successful! Please Click Sign In to continue.')
+	$('#signUpForm').trigger('reset')
 }
 
 // what happens with a sign up failure
 const signUpFailure = function(error) {
-	console.log(error)
+	$('#userAlert').text('Sign Up Failed! Please try again.')
 }
 
 // what happens when there is a successful sign in 
@@ -18,7 +18,8 @@ const signInSuccess = function(res) {
   // save the user in the api response to the store object
   store.user = res.user
 	$('#userAlert').text('Sign-in Successful!')
-	$('#signOutBtn').show()
+	$('#inAppUi').show()
+	$('#signInForm').hide()
 	$('#signInForm').trigger('reset')
 }
 
@@ -41,7 +42,8 @@ const onChangePasswordFailure = function () {
 const onSignOutSuccess = function () {
   $('#userAlert').text('Sign out successful. See you next time ' + store.user.email + '!')
   store.user = null
-	$('#showSignUp').show()
+	$('#signInForm').show()
+	resetForms()
 }
 
 // when sign out fails
@@ -52,10 +54,12 @@ const onSignOutFailure = function () {
 // function that resets the forms to default of first load state
 const resetForms = () => {
 	$('#userAlert').text('')
+	$('#createPostForm').hide()
 	$('#changePasswordForm').hide()
-	$('#changePasswordForm').hide()
+	$('#inAppUi').hide()
 	$('#signUpForm').hide()
-	$('#signOutBtn').hide()
+	$('#post-display').text('')
+	$('#post-display').hide()
 	$('#signInForm').show().trigger('reset')
 }
 

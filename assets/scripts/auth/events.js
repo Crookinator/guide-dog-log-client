@@ -13,10 +13,9 @@ const api = require('./api')
 const onSignUp = function (event) {
 		event.preventDefault()
 		// capture the form from the event
-		const form = event.target
+	const form = event.target
 		// use getFormFields to extract the data from the form
 		const data = getFormFields(form)
-
 		// send data to the api
 		api.signUp(data)
 			// handle successful response

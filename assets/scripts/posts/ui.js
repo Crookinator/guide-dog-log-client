@@ -17,9 +17,10 @@ const onIndexSuccess = function (res) {
 			<p>ID: ${currentPost._id}</p>
       <br>
     `)
-
-    $('#post-display').append(postHTML)
-  })
+			
+			$('#post-display').append(postHTML)
+		})
+	$('#post-display').show()
 }
 
 // on successful GET request for a single post

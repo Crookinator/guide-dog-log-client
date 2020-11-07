@@ -43,10 +43,12 @@ const onEditPost = event => {
 	//prevent default action
 	event.preventDefault()
 	//set a variable for the event target
-	const post = event.target
+	const post = $(event.target)
 	//set the variables data attribute  to a variable
 	const id = post.data('id')
-	$('#userAlert').text('the events id is ' + id)
+	api.show(id)
+		.then($('#userAlert').text('show path working'))
+		.catch()
 }
 
 

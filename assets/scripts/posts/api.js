@@ -16,15 +16,16 @@ const index = function () {
 }
 
 // show ajax request to see a specific post
-// const show = function () {
-// 	return $.ajax({
-// 		url: config.apiUrl + '/posts/:id',
-// 		headers: {
-// 			Authorization: 'Bearer ' + store.user.token
-// 		},
-// 		method: 'GET'
-// 	})
-// }
+const show = function (id) {
+	//id is a param for passing the posts id from the event handler
+	return $.ajax({
+		url: config.apiUrl + '/posts/' + id,
+		headers: {
+			Authorization: 'Bearer ' + store.user.token
+		},
+		method: 'GET'
+	})
+}
 
 // create ajax request to make new post
 const create = function (data) {
@@ -54,5 +55,6 @@ const create = function (data) {
 
 module.exports = {
 	index,
-	create
+	create,
+	show
 }

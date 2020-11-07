@@ -16,12 +16,10 @@ const onIndexSuccess = function (res) {
       <p>Breed: ${currentPost.breed}</p>
 			<p>Years Together: ${currentPost.yearsOfService}</p>
       <p>Post: ${currentPost.text}</p>
-			<button class="edit">Edit Post</button>
+			<button class="edit" data-id="${currentPost._id}">Edit Post</button>
 			<br>
 
     `)
-			$('.edit').data('id', currentPost._id)
-			
 			//append html below each post
 			$('#post-display').append(postHTML)
 		})

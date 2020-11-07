@@ -43,13 +43,7 @@ $(() => {
 	})
 	$('#createPostForm').on('submit', postEvents.onCreatePost)
 	$('#indexPosts').on('click', postEvents.onSeeAllPosts)
-	$('#post-display').on('click', 'button', event => {
-		//prevent default action
-		event.preventDefault()
-		const post = event.target
-		let id = post.data('id')
-		$('#userAlert').text('the events id is ' + id)
-	})
+	$('#post-display').on('click', 'button', postEvents.onEditPost)
 	
 	
 })

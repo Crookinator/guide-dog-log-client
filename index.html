@@ -12,11 +12,11 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
 		<body>
-			<header>
+			<header id="appHeader">
 				<h1>Guide Dog Log</h1>
 				<p>A forum for guide dog owners to share their thoughts.</p>
 			</header>
-			
+
 <!--User Alert Field & Sign Up Form -->
 			<section>
 				<div class='container--custom global-spacing--large'>
@@ -28,7 +28,7 @@
 					</fieldset>
 				</form>
 			</section>
-			
+
 <!--Sign In Form -->
 			<section>
 				<form class='container--custom global-spacing--large' id="signInForm" name="signInForm">
@@ -37,7 +37,7 @@
 					</fieldset>
 				</form>
 			</section>
-			
+
 <!--Change Password Form -->
 			<section>
 				<form class='container--custom global-spacing--large' id="changePasswordForm" name="changePasswordForm">
@@ -46,7 +46,7 @@
 					</fieldset>
 				</form>
 			</section>
-			
+
 <!--Create Post Form -->
 			<section>
 				<form class='container--custom global-spacing--large' id="createPostForm" name="createPostForm">
@@ -55,7 +55,7 @@
 					</fieldset>
 				</form>
 			</section>
-			
+
 <!--UI Buttons -->
 			<div class="container-fluid row">
 			
@@ -66,6 +66,18 @@
 					<input type='button' class='uiButton' id='showChangePassword' value='Change Password'>
 					<input class='uiButton' id="signOutBtn" type="button" value='Sign out'>
 				</section>
+
+<!--Update and Delete UI Buttons -->
+				<section class='container--custom global-spacing--large col-lg-4' id='editPostUi'>
+					<form>
+						<input type="button" class="formHomeBtn" value="Home">
+						<input type="button" id="showUpdate" value="Update Post">
+						<label for="validateDestroy">I understand that by clicking "Delete" my post is permanently deleted and can not be recovered</label>
+						<input type="checkbox" id="validateDestroy" value="1">
+						<input type="submit" disabled id="destroyPost" value="Delete Post">
+					
+				</section>
+<!--Div to hold the HTML from the GET requests -->
 				<div id='post-display' class="container col-lg-8"></div>
 			</div>
 			

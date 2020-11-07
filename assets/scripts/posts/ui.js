@@ -1,21 +1,24 @@
 'use strict'
+// require the store
+const store = require('../store')
 
 // successful index request
 const onIndexSuccess = function (res) {
-	//set posts variable to store the response from the api
-	const posts = res.posts
+	//set store to the index response 
+	store.posts = res.posts
 	// empty the displayPosts div
   $('#post-display').html('')
-	
-	posts.forEach(currentPost => {
+	$('#userAlert').text('See posts below')
+	store.posts.forEach(currentPost => {
     const postHTML = (`
       <h4>title: ${currentPost.title}</h4>
       <p>Guide: ${currentPost.guideDogName}</p>
       <p>Breed: ${currentPost.breed}</p>
 			<p>Years Together: ${currentPost.yearsOfService}</p>
       <p>Post: ${currentPost.text}</p>
-			<p>ID: ${currentPost._id}</p>
-      <br>
+			<button data-id="currentPost._id" class="edit">Edit Post</button>
+			<br>
+
     `)
 			
 			$('#post-display').append(postHTML)

@@ -20,9 +20,11 @@ $(() => {
 	$('#showChangePassword').on('click', event => {
 		event.preventDefault()
 		$('#inAppUi').hide()
+		$('#post-display').hide()
 		$('#changePasswordForm').show()
 	})
 	$('.formHomeBtn').on('click', event => {
+		$('#post-display').hide()
 		$('form').hide()
 		$('#inAppUi').show()
 		$('#userAlert').text('You are on the home screen.')
@@ -41,6 +43,13 @@ $(() => {
 	})
 	$('#createPostForm').on('submit', postEvents.onCreatePost)
 	$('#indexPosts').on('click', postEvents.onSeeAllPosts)
+	$('#post-display').on('click', 'button', event => {
+		//prevent default action
+		event.preventDefault()
+		//set the variables data attribute  to a variable
+		const id = event.target.data('id')
+		$('#userAlert').text('the events id is ' + id)
+	})
 	
 	
 })

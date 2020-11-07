@@ -7,6 +7,9 @@ const getFormFields = require('./../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
 
+// require the store
+const store = require('../store')
+
 // Event handler for the See All Posts listener
 const onSeeAllPosts = event => {
 	//stop the default action
@@ -33,8 +36,22 @@ const onCreatePost = event => {
 		.catch(ui.onError)
 }
 
+// Event handler for the Edit btn
+// Edit btn appears on successful index request
+// clicking edit will start a Show request for that specific post
+const onEditPost = event => {
+	//prevent default action
+	event.preventDefault()
+	//set a variable for the event target
+	const post = event.target
+	//set the variables data attribute  to a variable
+	const id = post.data('id')
+	$('#userAlert').text('the events id is ' + id)
+}
+
 
 module.exports = {
 	onSeeAllPosts,
-	onCreatePost
+	onCreatePost,
+	onEditPost
 }

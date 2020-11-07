@@ -55,6 +55,7 @@ const onSignOutFailure = function () {
 const resetForms = () => {
 	$('#userAlert').text('')
 	$('#createPostForm').hide()
+	$('#editPostUi').hide()
 	$('#changePasswordForm').hide()
 	$('#inAppUi').hide()
 	$('#signUpForm').hide()

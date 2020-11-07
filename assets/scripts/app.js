@@ -46,8 +46,8 @@ $(() => {
 	$('#post-display').on('click', 'button', event => {
 		//prevent default action
 		event.preventDefault()
-		//set the variables data attribute  to a variable
-		const id = event.target.data('id')
+		const post = event.target
+		let id = post.data('id')
 		$('#userAlert').text('the events id is ' + id)
 	})
 	

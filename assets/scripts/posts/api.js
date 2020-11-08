@@ -39,6 +39,17 @@ const create = function (data) {
 	})
 }
 
+// delete ajax request
+const destroy = id => {
+	return $.ajax({
+		url: config.apiUrl + '/posts/' + id,
+		headers: {
+			Authorization: 'Bearer ' + store.user.token
+		},
+		method: 'DELETE'
+	})
+}
+
 // update ajax request to change a post
 // const update = function () {
 // 	return $.ajax({
@@ -56,5 +67,6 @@ const create = function (data) {
 module.exports = {
 	index,
 	create,
-	show
+	show,
+	destroy
 }

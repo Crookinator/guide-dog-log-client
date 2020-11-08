@@ -8,8 +8,8 @@ const uiAuth = require('./auth/ui')
 
 
 $(() => {
-	//function to reset the forms back to the log in screen
-	uiAuth.resetForms()
+	//Make the sign in form available on page ready
+	$('#signInForm').show()
 	//event listeners for the various form buttons
 	$('#signUpForm').on('submit', authEvents.onSignUp)
 	$('#signInForm').on('submit', authEvents.onSignIn)
@@ -33,6 +33,7 @@ $(() => {
 	//event listeners for the in App UI
 	$('#uiHomeBtn').on('click', event => {
 		$('#userAlert').text('You are on the home screen.')
+		$('#editPostUi').hide()
 		$('#inAppUi').show()
 		$('#post-display').hide()
 	})
@@ -44,6 +45,21 @@ $(() => {
 	$('#createPostForm').on('submit', postEvents.onCreatePost)
 	$('#indexPosts').on('click', postEvents.onSeeAllPosts)
 	$('#post-display').on('click', 'button', postEvents.onEditPost)
+	$('#validateDestroy').on('click', function () {
+		// if the checkbox is checked
+		if ($(this).is(':checked')) {
+			// enable the Delete Post button
+			$('#destroyPost').prop('disabled', false)
+		} else {
+			// if it isn't checked disabled the button
+			$('#destroyPost').prop('disabled', true)
+		}
+	})
+	$('#destroyPost').on('click', postEvents.onDestroyPost)
+	$('#updatePost').on('click', event => {
+		event.preventDefault()
+		const id = $(event.target).data('id')
+		
 	
-	
+	})
 })

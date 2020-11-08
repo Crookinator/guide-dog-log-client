@@ -42,18 +42,30 @@ const onCreatePost = event => {
 const onEditPost = event => {
 	//prevent default action
 	event.preventDefault()
-	//set a variable for the event target
-	const post = $(event.target)
-	//set the variables data attribute  to a variable
-	const id = post.data('id')
+	//set a variable for the event targets data attribute
+	const id = $(event.target).data('id')
 	api.show(id)
-		.then($('#userAlert').text('show path working'))
-		.catch()
+		.then(ui.onShowSuccess)
+		.catch(ui.onError)
 }
 
+// handler for the Delete function
+const onDestroyPost = event => {
+	//prevent default behavior
+	event.preventDefault()
+	
+	// set the data attribute from the event to a variable
+	const id = $(event.target).data('id')
+	
+	//send the variable to the api delete request
+	api.destroy(id)
+		.then(ui.onDestroySuccess)
+		.catch(ui.onError)
+}
 
 module.exports = {
 	onSeeAllPosts,
 	onCreatePost,
-	onEditPost
+	onEditPost,
+	onDestroyPost
 }

@@ -22,7 +22,7 @@
 				<div class='container--custom global-spacing--large'>
 					<h3 aria-live='assertive' class='h3' id='userAlert'></h3>
 				</div>
-				<form class='container--custom global-spacing--large'  id="signUpForm" name="signUpForm">
+				<form style="display: none" class='container--custom global-spacing--large'  id="signUpForm" name="signUpForm">
 					<fieldset>
 						<legend>Sign up</legend> <label for="signUpEmail">Email</label> <input required="" id="signUpEmail" type="email" name="credentials[email]"> <label for="signUpPassword">Password</label> <input required="" id="signUpPassword" type="password" name="credentials[password]" placeholder="Password"> <label for="signUpPassword_confirmation">Password Confirmation</label> <input required="" id="signUpPassword_confirmmation" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password"> <input class='uiButton' type="submit"value='Sign up'> <input type='button' class='uiButton' id='showSignIn' value='Sign in'>
 					</fieldset>
@@ -31,7 +31,7 @@
 
 <!--Sign In Form -->
 			<section>
-				<form class='container--custom global-spacing--large' id="signInForm" name="signInForm">
+				<form style="display: none" class='container--custom global-spacing--large' id="signInForm" name="signInForm">
 					<fieldset>
 						<legend>Sign in</legend> <label for="signInEmail">Email</label> <input required="" id="signInEmail" type="email" name="credentials[email]" placeholder="Email"> <label for="signInPassword">Password</label> <input required="" id="signInPassword" type="password" name="credentials[password]" placeholder="Password"> <input class='uiButton' type="submit"value='Sign in'> <input class='uiButton' type='button' id='showSignUp' value='Sign up'>
 					</fieldset>
@@ -40,7 +40,7 @@
 
 <!--Change Password Form -->
 			<section>
-				<form class='container--custom global-spacing--large' id="changePasswordForm" name="changePasswordForm">
+				<form style="display: none" class='container--custom global-spacing--large' id="changePasswordForm" name="changePasswordForm">
 					<fieldset>
 						<legend>Change Password</legend> <label for="oldPassword">Old Password:</label><input required="" id="oldPassword" type="password" name="passwords[old]" placeholder="Old Password">  <label for="newPassword">New Password:</label><input required="" id='newPassword' type="password" name="passwords[new]" placeholder="New Password"> <input class='uiButton' type="submit" value="Change Password"> <input type='button' class='uiButton formHomeBtn' value='Home'>
 					</fieldset>
@@ -49,9 +49,18 @@
 
 <!--Create Post Form -->
 			<section>
-				<form class='container--custom global-spacing--large' id="createPostForm" name="createPostForm">
+				<form style="display: none" class='container--custom global-spacing--large' id="createPostForm" name="createPostForm">
 					<fieldset>
 						<legend>Create Post</legend> <label for="title">Title:</label><input required="" id="title" type="text" name="post[title]" placeholder="Title">  <label for="guideDogName">Guide's Name:</label><input id='guideDogName' type="text" name="post[guideDogName]" placeholder="Enter Dog's Name here"> <label for="yearsOfService">Years in Service:</label><input id='yearsOfService' type="text" name="post[yearsOfService]" placeholder="Enter working years here"> <label for="breed">Breed:</label><input id='breed' type="text" name="post[breed]" placeholder="Enter breed here"> <label for="postText">Post:</label><input required="" id='postText' type="text" name="post[text]" placeholder="Whats on your mind"> <input class='uiButton' type="submit" value="Create Post"> <input type='button' class='uiButton formHomeBtn' value='Home'>
+					</fieldset>
+				</form>
+			</section>
+
+<!--Update Post Form -->
+			<section>
+				<form style="display: none" class='container--custom global-spacing--large' id="updatePostForm" name="updatePostForm">
+					<fieldset>
+						<legend>Update Post</legend> <label for="title">Title:</label><input required="" id="title" type="text" name="post[title]" placeholder="Title">  <label for="guideDogName">Guide's Name:</label><input id='guideDogName' type="text" name="post[guideDogName]" placeholder="Enter Dog's Name here"> <label for="yearsOfService">Years in Service:</label><input id='yearsOfService' type="text" name="post[yearsOfService]" placeholder="Enter working years here"> <label for="breed">Breed:</label><input id='breed' type="text" name="post[breed]" placeholder="Enter breed here"> <label for="postText">Post:</label><input required="" id='postText' type="text" name="post[text]" placeholder="Whats on your mind"> <input class='uiButton' type="submit" value="Update Post"> <input type='button' class='uiButton formHomeBtn' value='Home'>
 					</fieldset>
 				</form>
 			</section>
@@ -59,26 +68,28 @@
 <!--UI Buttons -->
 			<div class="container-fluid row">
 			
-				<section class='container--custom global-spacing--large col-lg-4' id='inAppUi'>
-					<input type='button' class='uiButton' id='uiHomeBtn' value='Home'>
-					<input type='button' class='uiButton' id='createNewPost' value='Create New Post'>
-					<input type='button' class='uiButton' id='indexPosts' value='See All Posts'>
-					<input type='button' class='uiButton' id='showChangePassword' value='Change Password'>
-					<input class='uiButton' id="signOutBtn" type="button" value='Sign out'>
-				</section>
+				<section class='container--custom global-spacing--large col-lg-4'>
+					<div style="display: none" id='inAppUi'>
+						<input type='button' class='uiButton' id='uiHomeBtn' value='Home'>
+						<input type='button' class='uiButton' id='createNewPost' value='Create New Post'>
+						<input type='button' class='uiButton' id='indexPosts' value='See All Posts'>
+						<input type='button' class='uiButton' id='showChangePassword' value='Change Password'>
+						<input class='uiButton' id="signOutBtn" type="button" value='Sign out'>
+					</div>
 
 <!--Update and Delete UI Buttons -->
-				<section class='container--custom global-spacing--large col-lg-4' id='editPostUi'>
-					<form>
-						<input type="button" class="formHomeBtn" value="Home">
-						<input type="button" id="showUpdate" value="Update Post">
+
+					<form style="display: none" id='editPostUi'>
+						<input type="button" class="formHomeBtn uiButton" value="Home">
+						<input type="button" class="uiButton" id="showUpdate" value="Update Post">
 						<label for="validateDestroy">I understand that by clicking "Delete" my post is permanently deleted and can not be recovered</label>
 						<input type="checkbox" id="validateDestroy" value="1">
-						<input type="submit" disabled id="destroyPost" value="Delete Post">
-					
+						<input disabled type="button" class="uiButton" id="destroyPost" value="Delete Post">
+					</form>
 				</section>
+
 <!--Div to hold the HTML from the GET requests -->
-				<div id='post-display' class="container col-lg-8"></div>
+				<div style="display: none" id='post-display' class="container col-lg-8"></div>
 			</div>
 			
 		</body>

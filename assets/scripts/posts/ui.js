@@ -6,20 +6,41 @@ const store = require('../store')
 const onIndexSuccess = function (res) {
 	//set store to the index response 
 	store.posts = res.posts
+	
+	//set a variable for HTML to be injected
+	let postHTML
+	
 	// empty the displayPosts div
   $('#post-display').html('')
+	
+	// set the userAlert field to inform user that posts are available
 	$('#userAlert').text('See posts below')
+	
+	//itterate over each post to inject into HTML
 	store.posts.forEach(currentPost => {
-    const postHTML = (`
-      <h4>title: ${currentPost.title}</h4>
-      <p>Guide: ${currentPost.guideDogName}</p>
-      <p>Breed: ${currentPost.breed}</p>
-			<p>Years Together: ${currentPost.yearsOfService}</p>
-      <p>Post: ${currentPost.text}</p>
-			<button class="edit" data-id="${currentPost._id}">Edit Post</button>
-			<br>
+		if (store.user._id !== currentPost.owner) {
+			postHTML = (`
+				<h4>title: ${currentPost.title}</h4>
+				<p>Guide: ${currentPost.guideDogName}</p>
+				<p>Breed: ${currentPost.breed}</p>
+				<p>Years Together: ${currentPost.yearsOfService}</p>
+				<p>Post: ${currentPost.text}</p>
+				<button disabled class="edit" data-id="${currentPost._id}">Edit Post</button>
+				<br>
+			`)
+		} else {
+			postHTML = (`
+				<h4>title: ${currentPost.title}</h4>
+				<p>Guide: ${currentPost.guideDogName}</p>
+				<p>Breed: ${currentPost.breed}</p>
+				<p>Years Together: ${currentPost.yearsOfService}</p>
+				<p>Post: ${currentPost.text}</p>
+				<button class="edit" data-id="${currentPost._id}">Edit Post</button>
+				<br>
+			`)
+		}
 
-    `)
+		
 			//append html below each post
 			$('#post-display').append(postHTML)
 		})
@@ -28,48 +49,52 @@ const onIndexSuccess = function (res) {
 
 // on successful GET request for a single post
 const onShowSuccess = function (res) {
-	//set a variable to the response
-	const post = res.post
+	$('#inAppUi').hide()
+	$('#editPostUi').show()
+	//set the store to the response
+	store.post = res.post
 
+// pass the id of the post to the Delete Post and Update buttons as a data attribute
+	$('#destroyPost').data('id', store.post._id)
+	$('#showUpdate').data('id', store.post._id)
   // clear out the HTML in the post-display div
   $('#post-display').html('')
 
   // created a string of HTML, plugging in post values
   const postHTML = (`
-		<h4>title: ${currentPost.title}</h4>
-			<p>Guide: ${currentPost.guideDogName}</p>
-		``<p>Breed: ${currentPost.breed}</p>
-			<p>Years Together: ${currentPost.yearsOfService}</p>
-		<p>Post: ${currentPost.text}</p>
-			<p>ID: ${currentPost._id}</p>
-    <br>
+		<h4>title: ${store.post.title}</h4>
+			<p>Guide: ${store.post.guideDogName}</p>
+			<p>Breed: ${store.post.breed}</p>
+			<p>Years Together: ${store.post.yearsOfService}</p>
+			<p>Post:\n ${store.post.text}</p>
   `)
-
-  $('#post-display').html(postHTML)
-
-  // clears out form input values
-  $('#posts-show').trigger('reset')
+$('#userAlert').text('Post is below')
+	$('#post-display').html(postHTML)
 }
 
 // on successful delete
 const onDestroySuccess = function () {
-  $('#userAlert').text('Books have changed! Click "Get All Books" again to see all the posts')
+  $('#userAlert').text('Post was successfully deleted. Click "Home" to return to the main screen.')
+	$('#post-display').html('').hide()
 
-  // reset all forms
-  $('form').trigger('reset')
+  // reset the form and disable the update button
+	$('#destroyPost').prop('disabled', true)
+	$('#validateDestroy').prop('disabled', true)
+	$('#showUpdate').prop('disabled', true)
 }
 
 // on successful update 
 const onUpdateSuccess = function () {
-  $('#userAlert').text('Posts have updated! Click "Get All posts" again to see all the posts')
+  $('#userAlert').text('Posts have updated! Click "Home" to return to the main screen.')
 
   // reset all forms
   $('form').trigger('reset')
+	$('#updatePostForm input').prop('disabled', true)
 }
 
 // when a post is created
 const onCreateSuccess = function () {
-  $('#userAlert').text('Book has been Created! Click "Get All Books" again to see all the posts')
+  $('#userAlert').text('Post has been Created! Click "Home" to return to the main screen.')
 
   // reset all forms
   $('form').trigger('reset')

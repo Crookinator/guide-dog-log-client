@@ -24,7 +24,10 @@ $(() => {
 		$('#changePasswordForm').show()
 	})
 	$('.formHomeBtn').on('click', event => {
+		$('.dimmed').prop('disabled', false)
 		$('#post-display').hide()
+		$('form').trigger('reset')
+		$('#updatePostForm').hide()
 		$('form').hide()
 		$('#inAppUi').show()
 		$('#userAlert').text('You are on the home screen.')
@@ -56,10 +59,6 @@ $(() => {
 		}
 	})
 	$('#destroyPost').on('click', postEvents.onDestroyPost)
-	$('#updatePost').on('click', event => {
-		event.preventDefault()
-		const id = $(event.target).data('id')
-		
-	
-	})
+	$('#showUpdate').on('click', postEvents.setupUpdateForm)
+	$('#updatePostForm').on('submit', postEvents.onUpdatePost)
 })

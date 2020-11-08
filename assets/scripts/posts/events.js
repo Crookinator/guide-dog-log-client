@@ -63,9 +63,51 @@ const onDestroyPost = event => {
 		.catch(ui.onError)
 }
 
+// function to pass the current post content to the update post form
+const setupUpdateForm = event => {
+	event.preventDefault()
+	$('#userAlert').text(`Make changes to the post titled (${store.post.title}) Below`)
+	$('#updatePostForm').show()
+$('#post-display').html('').hide()	
+	//setup the UI changes 
+	$('#editPostUi').hide()
+	
+	// create the update html form
+	const updateHTML = (`
+		
+				<fieldset>
+					<legend>Update Post</legend> <label for="title">Title:</label><input required="" id="title" type="text" name="post[title]" value="${store.post.title}">  <label for="guideDogName">Guide's Name:</label><input id='guideDogName' type="text" name="post[guideDogName]" value="${store.post.guideDogName}"> <label for="yearsOfService">Years in Service:</label><input id='yearsOfService' type="text" name="post[yearsOfService]" value="${store.post.yearsOfService}"> <label for="breed">Breed:</label><input id='breed' type="text" name="post[breed]" value="${store.post.breed}"> <label for="postText">Post:</label><input required="" id='postText' type="text" name="post[text]" value="${store.post.text}"> 
+				</fieldset>
+	`)
+	//inject updateHTML into the display-update-form div
+	$('#display-update-form').html(updateHTML)
+	
+	// if this is a secondary edit enable the form to be editable
+	$('#subUpdateBtn').prop('disabled', false)
+	$('#display-update-form input').prop('disabled', false)
+	
+	
+}
+
+// Event handler for the submission of the update form
+const onUpdatePost = event => {
+	event.preventDefault()
+	// capture the form from the event
+	const form = event.target
+	// use getFormFields to extract the data from the form
+	const data = getFormFields(form)
+	// send data to the api
+	api.update(data)
+		// handle successful response
+		.then(ui.onUpdateSuccess)
+		// handle failed response
+		.catch(ui.onError)
+}
 module.exports = {
 	onSeeAllPosts,
 	onCreatePost,
 	onEditPost,
-	onDestroyPost
+	onDestroyPost,
+	setupUpdateForm,
+	onUpdatePost
 }

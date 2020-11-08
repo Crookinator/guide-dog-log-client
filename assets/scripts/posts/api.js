@@ -51,22 +51,21 @@ const destroy = id => {
 }
 
 // update ajax request to change a post
-// const update = function () {
-// 	return $.ajax({
-// 		url: config.apiUrl + '/posts'
-// 	})
-// }
-// delete ajax function to destroy a post
-// const delete = function () {
-// 	return $.ajax({
-//
-// 	})
-// }
-
+const update = function (data) {
+	return $.ajax({
+		url: config.apiUrl + '/posts/' + store.post._id,
+		headers: {
+			Authorization: 'Bearer ' + store.user.token
+		},
+		method: 'PATCH',
+		data: data
+	})
+}
 
 module.exports = {
 	index,
 	create,
 	show,
-	destroy
+	destroy,
+	update
 }

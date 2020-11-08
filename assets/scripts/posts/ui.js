@@ -51,6 +51,8 @@ const onIndexSuccess = function (res) {
 const onShowSuccess = function (res) {
 	$('#inAppUi').hide()
 	$('#editPostUi').show()
+	$('#validateDestroy').prop('disabled', false).val("1")
+	$('#showUpdate').prop('disabled', false)
 	//set the store to the response
 	store.post = res.post
 
@@ -85,19 +87,20 @@ const onDestroySuccess = function () {
 
 // on successful update 
 const onUpdateSuccess = function () {
-  $('#userAlert').text('Posts have updated! Click "Home" to return to the main screen.')
+  $('#userAlert').text('Post has updated! Click "Home" to return to the main screen.')
 
-  // reset all forms
-  $('form').trigger('reset')
-	$('#updatePostForm input').prop('disabled', true)
+  // disable the update button and clear the form  to prevent further edits
+	$('#subUpdateBtn').prop('disabled', true)
+	$('#display-update-form input').prop('disabled', true)
+	
 }
 
 // when a post is created
 const onCreateSuccess = function () {
   $('#userAlert').text('Post has been Created! Click "Home" to return to the main screen.')
 
-  // reset all forms
-  $('form').trigger('reset')
+  // disable the form inputs
+  $('#createSubmit').prop('disabled', true).addClass('dimmed')
 }
 
 // error msg if something goes wrong

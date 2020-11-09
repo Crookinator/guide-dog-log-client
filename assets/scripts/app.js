@@ -47,6 +47,8 @@ $(() => {
 		$('#userAlert').text('Create a new post below')
 		$('#createPostForm').show()
 		$('#inAppUi').hide()
+		$('#post-display').html('').hide()
+		
 	})
 	$('#createPostForm').on('submit', postEvents.onCreatePost)
 	$('#indexPosts').on('click', postEvents.onSeeAllPosts)

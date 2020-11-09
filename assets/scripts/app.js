@@ -5,14 +5,17 @@ const postEvents = require('./posts/events')
 // require the auth ui file
 const uiAuth = require('./auth/ui')
 
-
+const authHandlers = function () {
+	//event listeners for the various form buttons
+	$('#signUpForm').on('submit', authEvents.onSignUp)
+	$('#signInForm').on('submit', authEvents.onSignIn)
+	
+}
 
 $(() => {
 	//Make the sign in form available on page ready
 	$('#signInForm').show()
-	//event listeners for the various form buttons
-	$('#signUpForm').on('submit', authEvents.onSignUp)
-	$('#signInForm').on('submit', authEvents.onSignIn)
+	authHandlers()
 	$('#changePasswordForm').on('submit', authEvents.onChangePassword)
 	$('#signOutBtn').on('click', authEvents.onSignOut)
 	$('#showSignUp').on('click', uiAuth.onShowSignUp)

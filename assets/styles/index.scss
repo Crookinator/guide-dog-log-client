@@ -5,12 +5,19 @@ box-sizing: border-box;
 
 #appHeader {
 position: relative;
+background: #092b05;
+color: white;
+}
+body {
+background: black;
 }
 
 .uiButton {
 display: block;
+background: #092b05;
+color: white;
 width: 100%;
-border-width: 2px solid #FFFF00;
+border-width: 2px solid #005000;
 min-height: 20px;
 padding: 10px;
 max-width: 500;
@@ -68,3 +75,11 @@ font-weight: bold;
 background-image: url("https://wallpapercave.com/wp/wp2116376.jpg");
 background-size: cover;}
 
+#post-display {
+color: white;
+}
+
+#post-display > button {
+background: #092b05;
+color: white;
+}

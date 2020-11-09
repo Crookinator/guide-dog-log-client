@@ -25,7 +25,6 @@ const onIndexSuccess = function (res) {
 				<p>Breed: ${currentPost.breed}</p>
 				<p>Years Together: ${currentPost.yearsOfService}</p>
 				<p>Post: ${currentPost.text}</p>
-				<button disabled class="edit" data-id="${currentPost._id}">Edit Post</button>
 				<br>
 			`)
 		} else {

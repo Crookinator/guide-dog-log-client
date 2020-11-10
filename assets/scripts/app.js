@@ -25,7 +25,7 @@ const authHandlers = function () {
 const uiHandlers = function () {
 	$('.formHomeBtn').on('click', event => {
 		$('.dimmed').prop('disabled', false)
-		$('#post-display').hide()
+		$('#post-display').html('').hide()
 		$('form').trigger('reset').hide()
 		$('#updatePostForm').hide()
 		$('#userAlert').text('You are on the home screen.')
@@ -33,7 +33,7 @@ const uiHandlers = function () {
 }
 const postHandlers= function () {
 	const createHTML = (`
-name="createPostForm">
+		<form name="createPostForm">
 						<fieldset>
 							<legend>Create Post (fields marked with * are required)</legend>
 							<label for="title">Title(*):</label>
@@ -48,9 +48,11 @@ name="createPostForm">
 							<input required="" id='postText' type="text" name="post[text]" placeholder="Whats on your mind">
 							<input class='uiButton' id='createSubmit' type="submit" value="Create Post">
 						</fieldset>
+		</form>
 		`)
 	$('#createNewPost').on('click', event => {
 		$('#userAlert').text('Create a new post below')
+		$('#createNewPost').hide()
 		$('#createPostForm').html(createHTML).show()
 		
 		$('#post-display').html('').hide()

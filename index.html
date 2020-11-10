@@ -16,6 +16,8 @@
 						<h1>Guide Dog Log</h1>
 						<p>A forum for guide dog owners to share their thoughts.</p>
 			</header>
+
+<!--Navbar  -->
 						<div class='mx-auto nv' style="display: none"> <nav class="navbar  sticky-top navbar-expand-md  navbar-dark bg-dark">
 						  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 						    <span class="navbar-toggler-icon"></span>
@@ -101,12 +103,9 @@
 			<section class='authForms'>
 				<form style="display: none" class='forms' id="updatePostForm" name="updatePostForm">
 					<div id='display-update-form'></div>
-					<div>
-						<input class='uiButton' type="submit" id="subUpdateBtn" value="Update Post">
-						<input type='button' class='uiButton formHomeBtn' value='Home'>
-					</div>
 				</form>
 			</section>
+
 <!-- Settings Form -->
 			<section style='display: none' class='authForms settings'>
 				<form class='forms'>
@@ -120,27 +119,31 @@
 
 			<div class="container-fluid row">
 			
-				<section class='col-lg-4'>
+				<section class='col-lg-3 postUi'>
 						<input style='display: none' type='button' class='ui uiButton' id='createNewPost' value='Create New Post'>
 
 <!--Update and Delete UI Buttons -->
+						<section style="display: none" class='ui' id='editPostUi'>
+					<form>							<fieldset>
+									<legend>Update / Delete</legend>
 
-					<form style="display: none" class='ui' id='editPostUi'>
-						<input type="button" class="formHomeBtn uiButton" value="Home">
 						<input type="button" class="uiButton" id="showUpdate" value="Update Post">
 						<input type="checkbox" id="validateDestroy" value="1">
 						<label for="validateDestroy">I understand that by clicking "Delete" my post is permanently deleted and can not be recovered</label>
 						<input disabled type="button" class="uiButton" id="destroyPost" value="Delete Post">
+						</fieldset>
 					</form>
+				</section>
 				</section>
 
 <!--Div to hold the HTML from the GET requests -->
-				<div style="display: none" id='post-display' class="ui container col-lg-8"></div>
+				<div style="display: none" id='post-display' class="ui container col-lg-4 postUi"></div>
 			</div>
 			
-			<footer class='fixed-bottom'>
-				<p>This app has been created as a resource for persons with Guide Dogs. </p>
-				<p>The term Guide Dog refers to any dog that is specially trained to assist a blind owner with orientation and mobility.</p>
+			<footer class='fixed-bottom t-auto'>
+				<div id='footertext'>
+					<p>This app has been created as a resource for persons with Guide Dogs. >The term Guide Dog refers to any dog that is specially trained to assist a blind owner with orientation and mobility.</p>
+			</div>
 			</footer>
 		</body>
 </html>

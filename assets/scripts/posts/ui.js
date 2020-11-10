@@ -53,6 +53,7 @@ const onShowSuccess = function (res) {
 	$('#editPostUi').show()
 	$('#validateDestroy').prop('disabled', false).val("1")
 	$('#showUpdate').prop('disabled', false)
+	$('#createNewPost').hide()
 	//set the store to the response
 	store.post = res.post
 

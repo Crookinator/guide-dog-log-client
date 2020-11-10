@@ -7,7 +7,12 @@ text-align: center;
 }
 
 .nv {
+	display: flex;
 	max-width: 550px;
+}
+
+nav {
+	justify-content: center;
 }
 
 body {
@@ -15,9 +20,16 @@ background: black;
 }
 
 footer {
-background: #092b05;
-color: white;
-text-align: center;
+	background: #092b05;
+	color: white;
+	display: flex;
+	justify-content: center;
+}
+#footertext {
+	max-width: 700px;
+}
+p {
+	text-align: center;
 }
 
 .authForms {
@@ -32,6 +44,21 @@ text-align: center;
 	max-width: 500px;
 	margin: 0 auto;
 }
+
+.postUi {
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+#post-display {
+	max-width: 500px;
+}
+#post-display > button {
+	background: #092b05;
+	color: white;
+	width: 100%;
+}
+
 
 label {
 	font-size: 16px;

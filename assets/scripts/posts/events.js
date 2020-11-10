@@ -31,10 +31,11 @@ const onCreatePost = event => {
 	const data = getFormFields(form)
 	// send data to the api
 	api.create(data)
-``		// handle successful response
+		// handle successful response
 		.then(ui.onCreateSuccess)
 		// handle failed response
 		.catch(ui.onError)
+	$('form').prop('disabled', true)
 }
 
 // Event handler for the Edit btn

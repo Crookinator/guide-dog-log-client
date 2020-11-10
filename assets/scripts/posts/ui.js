@@ -9,7 +9,8 @@ const onIndexSuccess = function (res) {
 	
 	//set a variable for HTML to be injected
 	let postHTML
-	
+
+	$('#createNewPost').show()
 	// empty the displayPosts div
   $('#post-display').html('')
 	
@@ -48,7 +49,7 @@ const onIndexSuccess = function (res) {
 
 // on successful GET request for a single post
 const onShowSuccess = function (res) {
-	$('#inAppUi').hide()
+	
 	$('#editPostUi').show()
 	$('#validateDestroy').prop('disabled', false).val("1")
 	$('#showUpdate').prop('disabled', false)

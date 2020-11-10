@@ -1,14 +1,15 @@
 @import '~bootstrap/scss/bootstrap';
-* {
-box-sizing: border-box;
-}
 
-#appHeader {
-position: relative;
+header {
 background: #092b05;
 color: white;
 text-align: center;
 }
+
+.nv {
+	max-width: 550px;
+}
+
 body {
 background: black;
 }
@@ -17,7 +18,37 @@ footer {
 background: #092b05;
 color: white;
 text-align: center;
+}
 
+.authForms {
+	display: flex;
+	justify-content: center;
+	padding: 10px;
+}
+
+.forms,
+.buttons {
+	flex-grow: 1;
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+label {
+	font-size: 16px;
+	font-weight: bold;
+	color: #FFF;
+}
+
+legend {
+	color: #FFF;
+	font-size: 25px;
+	font-weight: bold;
+	text-align: center;
+}
+
+fieldset > * {
+	display: block;
+	width: 100%;
 }
 
 .uiButton {
@@ -32,46 +63,6 @@ max-width: 500;
 margin: 5px;
 }
 
-.container {
- height: 50vh;
-}
-
-
-
-.container--custom {
-max-width: 1150px;
-margin: 0 auto;
-padding: 100 0 100 0; 
-}
-
-.global-spacing--large {
-margin-top: 50px;
-}
-.global-spacing--small {
-margin-top: 20px;
-}
-
-input[type='text'],
-input[type='email'],
-input[type='password'],
-input[type='button'],
-input[type='submit'] {
-min-height: 20px;
-padding: 10px;
-max-width: 500px;}
-label {
-font-size: 16px;
-font-weight: bold;
-color: #FFF;}
-legend {
-color: #FFF;
-font-size: 25px;
-font-weight: bold;
-}
-fieldset > * {
-display: block;
-width: 100%;
-}
 h3,
 .h3 {
 color: #FFF;
@@ -79,9 +70,6 @@ font-size: 18px;
 font-weight: bold;
 }
 
-#gameBoard .board{
-background-image: url("https://wallpapercave.com/wp/wp2116376.jpg");
-background-size: cover;}
 
 #post-display {
 color: white;
@@ -91,3 +79,4 @@ color: white;
 background: #092b05;
 color: white;
 }
+

@@ -17,8 +17,8 @@ const signUpFailure = function(error) {
 const signInSuccess = function(res) {
   // save the user in the api response to the store object
   store.user = res.user
-	$('#userAlert').text('Sign-in Successful!')
-	$('#inAppUi').show()
+	$('#userAlert').text(`Sign-in Successful. Welcome back ${store.user.email}`)
+	$('.nv').show()
 	$('#signInForm').hide()
 	$('#signInForm').trigger('reset')
 }
@@ -57,7 +57,7 @@ const resetForms = () => {
 	$('#createPostForm').hide()
 	$('#editPostUi').hide()
 	$('#changePasswordForm').hide()
-	$('#inAppUi').hide()
+	
 	$('#signUpForm').hide()
 	$('#post-display').text('')
 	$('#post-display').hide()

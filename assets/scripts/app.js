@@ -16,8 +16,9 @@ const authHandlers = function () {
 	$('#showSignIn').on('click', uiAuth.resetForms)
 	$('#showChangePassword').on('click', event => {
 		event.preventDefault()
-		
-		$('#post-display').hide()
+		$('#userAlert').text('Change password below')
+		$('#post-display').html('').hide()
+		$('.settings').hide()
 		$('#changePasswordForm').show()
 	})
 	
@@ -26,6 +27,7 @@ const uiHandlers = function () {
 	$('.formHomeBtn').on('click', event => {
 		$('.dimmed').prop('disabled', false)
 		$('#post-display').html('').hide()
+		$('#createNewPost').hide()
 		$('form').trigger('reset').hide()
 		$('#updatePostForm').hide()
 		$('#showChangePassword').hide()
@@ -87,9 +89,11 @@ $(() => {
 	
 	$('#settings').on('click', event => {
 		event.preventDefault()
+		$('#userAlert').text('Settings are below')
 		$('.settings').show()
+		$('#showChangePassword').show()
 		$('#changePasswordForm').hide()
-		$('#showChangePassword').hide()
+		$('#createNewPost').hide()
 		$('#post-display').html('').hide()
 		$('.home').hide()
 	})

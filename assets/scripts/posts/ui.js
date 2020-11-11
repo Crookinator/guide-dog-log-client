@@ -11,6 +11,7 @@ const onIndexSuccess = function (res) {
 	let postHTML
 
 	$('#createNewPost').show()
+	$('.settings').hide()
 	// empty the displayPosts div
   $('#post-display').html('')
 	

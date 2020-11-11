@@ -12,6 +12,8 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
 		<body>
+		<div id="page-container">
+		<div id="content-wrap">
 			<header id="appHeader">
 						<h1>Guide Dog Log</h1>
 						<p>A forum for guide dog owners to share their thoughts.</p>
@@ -115,8 +117,11 @@
 					</fieldset>
 				</form>
 			</section>
+			<div class='container-fluid row'>
+				<div  class='col-lg-12' id='laws-display'></div>
+			</div>
 
-<!--UI Buttons -->
+
 			<div class="container-fluid row">
 			
 				<section class='postUi'>
@@ -124,12 +129,11 @@
 
 <!--Laws Display and Home Display -->
 						<div id='home-display'></div>
-						<div class='col-lg-8' id='laws-display'></div>
 <!--Div to hold the HTML from the GET requests -->
 				<div style="display: none" id='post-display' class="ui container col-lg-4 postUi"></div>
 
-						<section style="display: none" class='ui' id='editPostUi'>
-					<form>							<fieldset>
+						<section style='display: none' class="editPostUi">
+					<form class='editPostUi'> <fieldset>
 									<legend>Update / Delete</legend>
 
 						<input type="button" class="uiButton" id="showUpdate" value="Update Post">
@@ -142,11 +146,12 @@
 				</section>
 
 			</div>
-			
-			<footer class='fixed-bottom t-5px'>
+		</div>
+			<footer >
 				<div id='footertext'>
 					<p>This app has been created as a resource for persons with Guide Dogs. The term Guide Dog refers to any dog that is specially trained to assist a blind owner with orientation and mobility.</p>
 			</div>
 			</footer>
+		</div>
 		</body>
 </html>

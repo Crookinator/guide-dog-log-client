@@ -94,6 +94,7 @@ h3,
 .h3 {
 color: #FFF;
 font-size: 18px;
+text-align: center;
 font-weight: bold;
 }
 
@@ -110,4 +111,27 @@ color: white;
 #home-display,
 #laws-display {
 	color: white;
+}
+
+#laws-display {
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;    
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;            
 }

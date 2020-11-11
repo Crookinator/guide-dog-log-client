@@ -16,6 +16,7 @@ const onIndexSuccess = function (res) {
 	$('#home-display').html('').hide()
 	$('#laws-display').html('').hide()
 	$('.settings').hide()
+	$('form').hide()
 	// empty the displayPosts div
   $('#post-display').html('')
 	
@@ -51,8 +52,8 @@ const onIndexSuccess = function (res) {
 // on successful GET request for a single post
 const onShowSuccess = function (res) {
 	
-	$('#editPostUi').show()
 	$('#validateDestroy').prop('disabled', false).val("1")
+	$('.editPostUi').show()
 	$('#showUpdate').prop('disabled', false)
 	$('#createNewPost').hide()
 	//set the store to the response
@@ -67,9 +68,7 @@ const onShowSuccess = function (res) {
   // created a string of HTML, plugging in post values
   const postHTML = (`
 		<h4>title: ${store.post.title}</h4>
-			<p>Guide: ${store.post.guideDogName}</p>
-			<p>Breed: ${store.post.breed}</p>
-			<p>Years Together: ${store.post.yearsOfService}</p>
+		<p>Guide: ${store.post.guideDogName} Breed: ${store.post.breed} Years Together: ${store.post.yearsOfService}</p>
 			<p>Post:\n ${store.post.text}</p>
   `)
 $('#userAlert').text('Post is below')
@@ -126,8 +125,7 @@ Airlines cannot refuse to allow your animal onboard because it makes other passe
 Your animal must behave properly. An animal that engages in disruptive behavior (ex. barking or snarling, running around, and/or jumping onto other passengers, etc. without being provoked) will not be accepted as a service animal.</p>
 		<br>
 		<h2>ACAA Video Explanation</h2>
-		<iframe width="560" height="315" src="https://www.youtube.com/embed/LbZhruHJKdA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-		<br>
+		<iframe style="margin-bottom: 20px" width="560" height="315" src="https://www.youtube.com/embed/LbZhruHJKdA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 	`)
 	$('#laws-display').html(lawHTML).show()
 

@@ -73,7 +73,7 @@ const setupUpdateForm = event => {
 	$('#updatePostForm').show()
 $('#post-display').html('').hide()	
 	//setup the UI changes 
-	$('#editPostUi').hide()
+	$('.editPostUi').hide()
 	
 	// create the update html form
 	const updateHTML = (`

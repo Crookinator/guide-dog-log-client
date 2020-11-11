@@ -1,6 +1,8 @@
 'use strict' 
 // require store for saving information into the store object
 const store = require('./../store')
+// require the posts events file for the home function 
+const postEvents = require('../posts/events')
 
 // what happens when the sign up is successful
 const signUpSuccess = function(res) {
@@ -17,7 +19,8 @@ const signUpFailure = function(error) {
 const signInSuccess = function(res) {
   // save the user in the api response to the store object
   store.user = res.user
-	$('#userAlert').text(`Sign-in Successful. Welcome back ${store.user.email}`)
+	postEvents.home()
+	$('#userAlert').text(`Sign-in Successful`)
 	$('.nv').show()
 	$('#signInForm').hide()
 	$('#signInForm').trigger('reset')
@@ -42,7 +45,10 @@ const onChangePasswordFailure = function () {
 const onSignOutSuccess = function () {
   $('#userAlert').text('Sign out successful. See you next time ' + store.user.email + '!')
   store.user = null
+	store.post = null
 	$('#signInForm').show()
+	$('#home-display').html('').hide()
+	$('#laws-display').html('').hide()
 	resetForms()
 }
 
@@ -55,6 +61,8 @@ const onSignOutFailure = function () {
 const resetForms = () => {
 	$('#userAlert').text('')
 	$('#createPostForm').hide()
+	$('.settings').hide()
+	$('#changePasswordForm').hide()
 	$('#editPostUi').hide()
 	$('#changePasswordForm').hide()
 	

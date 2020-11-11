@@ -2,6 +2,7 @@
 // require the store
 const store = require('../store')
 
+
 // successful index request
 const onIndexSuccess = function (res) {
 	//set store to the index response 
@@ -11,6 +12,9 @@ const onIndexSuccess = function (res) {
 	let postHTML
 
 	$('#createNewPost').show()
+	$('#createPostForm').hide()
+	$('#home-display').html('').hide()
+	$('#laws-display').html('').hide()
 	$('.settings').hide()
 	// empty the displayPosts div
   $('#post-display').html('')
@@ -106,11 +110,35 @@ const onError = function (error) {
 	$('#userAlert').text('An error occured in this process. Please try again.')
 }
 
+// function to show the guide dog laws
+const onLawsSuccess = function () {
+	const lawHTML = (`
+		<h2>General Info</h2>
+		<p>Access laws in the United States and Canada, including the Americans with Disabilities Act (ADA) and the Human Rights Act of Canada, permit people who are blind to be accompanied by their guide dogs everywhere the general public is allowed: stores, restaurants, office buildings, taxis, buses and all areas of public accommodation. A guide dog is trained to stand, sit or lie quietly in public places when not leading. Individual states and provinces have their own laws as well; for the most current laws, please visit the respective state or province websites.</p>
+		<br>
+		<h2>Air Carrier Access Act (ACAA)</h2>
+		<p>
+		Under the Air Carrier Access Act (ACAA) a service animal is any animal that is individually trained or able to provide assistance to a person with a disability; or any animal that assists persons with disabilities by providing emotional support.  Documentation may be required of passengers needing to travel with an emotional support or psychiatric service animal.
+		
+		Your animal cannot block a space that must remain unobstructed for safety reasons (ex. an aisle or access to an emergency exit).
+An airline is not required to upgrade you to a different class of service to accommodate your animal.
+Airlines cannot refuse to allow your animal onboard because it makes other passengers or flight crew uncomfortable.
+Your animal must behave properly. An animal that engages in disruptive behavior (ex. barking or snarling, running around, and/or jumping onto other passengers, etc. without being provoked) will not be accepted as a service animal.</p>
+		<br>
+		<h2>ACAA Video Explanation</h2>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/LbZhruHJKdA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<br>
+	`)
+	$('#laws-display').html(lawHTML).show()
+
+}
+
 module.exports = {
   onIndexSuccess,
   onShowSuccess,
   onDestroySuccess,
   onError,
   onUpdateSuccess,
-	onCreateSuccess
+	onCreateSuccess,
+	onLawsSuccess
 }

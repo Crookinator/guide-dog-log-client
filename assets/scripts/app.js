@@ -26,12 +26,15 @@ const authHandlers = function () {
 const uiHandlers = function () {
 	$('.formHomeBtn').on('click', event => {
 		$('.dimmed').prop('disabled', false)
+		$('#laws-display').html('').hide()
+		$('#home-display').html('').show()
 		$('#post-display').html('').hide()
 		$('#createNewPost').hide()
 		$('form').trigger('reset').hide()
 		$('#updatePostForm').hide()
 		$('#showChangePassword').hide()
 		$('#userAlert').text('You are on the home screen.')
+		postEvents.home()
 	})
 }
 const postHandlers= function () {
@@ -92,9 +95,11 @@ $(() => {
 		$('#userAlert').text('Settings are below')
 		$('.settings').show()
 		$('#showChangePassword').show()
+		$('#home-display').html('').hide()
+		$('#laws-display').html('').hide()
 		$('#changePasswordForm').hide()
 		$('#createNewPost').hide()
 		$('#post-display').html('').hide()
-		$('.home').hide()
 	})
+	$('#laws').on('click', postEvents.onLawsClick)
 })

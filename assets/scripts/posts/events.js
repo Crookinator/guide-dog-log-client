@@ -113,11 +113,32 @@ const onUpdatePost = event => {
 		// handle failed response
 		.catch(ui.onError)
 }
+
+// function for the home display
+const home = function () {
+	let homeHTML = (`
+		<h2>Hi ${store.user.email}</h2>
+		<p> You are at your home page, use the navigation bar to explore posts, reference the access laws in case you run into an access issue, or change your password in the settings section. </p>
+	`)
+	$('#home-display').html(homeHTML)
+}
+
+// handler for the laws link being clicked
+const onLawsClick = function () {
+	$('#post-display').html('').hide()
+	$('#home-display').html('').hide()
+	$('form').hide()
+	$('#showChangePassword').hide()
+	ui.onLawsSuccess()
+}
+
 module.exports = {
 	onSeeAllPosts,
 	onCreatePost,
 	onEditPost,
 	onDestroyPost,
 	setupUpdateForm,
-	onUpdatePost
+	onUpdatePost,
+	home,
+	onLawsClick
 }

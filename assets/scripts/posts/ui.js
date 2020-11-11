@@ -22,18 +22,14 @@ const onIndexSuccess = function (res) {
 		if (store.user._id !== currentPost.owner) {
 			postHTML = (`
 				<h4>title: ${currentPost.title}</h4>
-				<p>Guide: ${currentPost.guideDogName}</p>
-				<p>Breed: ${currentPost.breed}</p>
-				<p>Years Together: ${currentPost.yearsOfService}</p>
+				<p>Guide: ${currentPost.guideDogName} Breed: ${currentPost.breed} Years Together: ${currentPost.yearsOfService}</p>
 				<p>Post: ${currentPost.text}</p>
 				<br>
 			`)
 		} else {
 			postHTML = (`
 				<h4>title: ${currentPost.title}</h4>
-				<p>Guide: ${currentPost.guideDogName}</p>
-				<p>Breed: ${currentPost.breed}</p>
-				<p>Years Together: ${currentPost.yearsOfService}</p>
+				<p>Guide: ${currentPost.guideDogName} Breed: ${currentPost.breed} Years Together: ${currentPost.yearsOfService}</p>
 				<p>Post: ${currentPost.text}</p>
 				<button class="edit" data-id="${currentPost._id}">Edit Post</button>
 				<br>

@@ -31,13 +31,14 @@
 						        <a class="nav-link" id='indexPosts' href="#">Community Posts</a>
 						      </li>
 						      <li class="nav-item">
-						        <a class="nav-link" id='signOutBtn' href="#">Sign Out</a>
-						      </li>
-						      <li class="nav-item">
 						        <a class="nav-link" id='laws' href="#">Access Laws</a>
 						      </li>
 						      <li class="nav-item">
-						        <a class="nav-link" id='settings' href="#">Settings</a>
+																        <a class="nav-link" id='settings' href="#">Settings</a>
+						      </li>
+						      <li class="nav-item">
+<a class="nav-link" id='signOutBtn' href="#">Sign Out</a>
+
 						      </li>
 								</ul>
 						  </div>
@@ -79,8 +80,8 @@
 			</section>
 
 <!--Change Password Form -->
-			<section class='authForms'>
-					<form style="display: none" class='forms' id="changePasswordForm" name="changePasswordForm">
+			<section class='authForms changePasswordForm'>
+					<form style="display: none" class='forms changePasswordForm' id="changePasswordForm" name="changePasswordForm">
 						<fieldset>
 							<legend>Change Password</legend>
 							<label for="oldPassword">Old Password:</label>
@@ -88,7 +89,6 @@
 							<label for="newPassword">New Password:</label>
 							<input required="" id='newPassword' type="password" name="passwords[new]" placeholder="New Password">
 							<input class='uiButton' type="submit" value="Change Password">
-							<input type='button' class='uiButton formHomeBtn' value='Home'>
 						</fieldset>
 					</form>
 			</section>
@@ -108,7 +108,7 @@
 
 <!-- Settings Form -->
 			<section style='display: none' class='authForms settings'>
-				<form class='forms'>
+				<form class='forms settings'>
 					<fieldset>
 						<legend>Settings</legend>
 							<input type='button' class='uiButton' id='showChangePassword' value='Change Password'>
@@ -119,10 +119,14 @@
 
 			<div class="container-fluid row">
 			
-				<section class='col-lg-3 postUi'>
+				<section class='postUi'>
 						<input style='display: none' type='button' class='ui uiButton' id='createNewPost' value='Create New Post'>
 
 <!--Update and Delete UI Buttons -->
+
+<!--Div to hold the HTML from the GET requests -->
+				<div style="display: none" id='post-display' class="ui container col-lg-4 postUi"></div>
+
 						<section style="display: none" class='ui' id='editPostUi'>
 					<form>							<fieldset>
 									<legend>Update / Delete</legend>
@@ -136,8 +140,6 @@
 				</section>
 				</section>
 
-<!--Div to hold the HTML from the GET requests -->
-				<div style="display: none" id='post-display' class="ui container col-lg-4 postUi"></div>
 			</div>
 			
 			<footer class='fixed-bottom t-auto'>

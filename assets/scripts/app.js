@@ -28,6 +28,7 @@ const uiHandlers = function () {
 		$('#post-display').html('').hide()
 		$('form').trigger('reset').hide()
 		$('#updatePostForm').hide()
+		$('#showChangePassword').hide()
 		$('#userAlert').text('You are on the home screen.')
 	})
 }
@@ -88,7 +89,8 @@ $(() => {
 		event.preventDefault()
 		$('.settings').show()
 		$('#changePasswordForm').hide()
-		$('.ui').hide()
+		$('#showChangePassword').hide()
+		$('#post-display').html('').hide()
 		$('.home').hide()
 	})
 })

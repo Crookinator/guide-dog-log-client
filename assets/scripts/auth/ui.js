@@ -24,6 +24,7 @@ const signInSuccess = function(res) {
 	$('.nv').show()
 	$('#signInForm').hide()
 	$('#signInForm').trigger('reset')
+	$('#createNewPost').hide()
 }
 
 // what happens with failed sign in

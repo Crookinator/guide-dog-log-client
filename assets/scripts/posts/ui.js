@@ -27,18 +27,27 @@ const onIndexSuccess = function (res) {
 	store.posts.forEach(currentPost => {
 		if (store.user._id !== currentPost.owner) {
 			postHTML = (`
-				<h4>title: ${currentPost.title}</h4>
-				<p>Guide: ${currentPost.guideDogName} Breed: ${currentPost.breed} Years Together: ${currentPost.yearsOfService}</p>
-				<p>Post: ${currentPost.text}</p>
 				<br>
+				<div class="post">
+				<h2>${currentPost.title}</h2>
+				<p>Guide: ${currentPost.guideDogName}</p>
+				<p>Breed: ${currentPost.breed}</p>
+				<p>Years Together: ${currentPost.yearsOfService}</p>
+				<p>${currentPost.text}</p>
+				</div>
 			`)
 		} else {
 			postHTML = (`
-				<h4>title: ${currentPost.title}</h4>
-				<p>Guide: ${currentPost.guideDogName} Breed: ${currentPost.breed} Years Together: ${currentPost.yearsOfService}</p>
-				<p>Post: ${currentPost.text}</p>
-				<button class="edit" data-id="${currentPost._id}">Edit Post</button>
 				<br>
+				<div class="post">
+				<h2>${currentPost.title}</h2>
+				<p>Guide: ${currentPost.guideDogName}</p>
+				<p>Breed: ${currentPost.breed}</p>
+				<p>Years Together: ${currentPost.yearsOfService}</p>
+				<p>${currentPost.text}</p>
+				</div>
+				<br>
+				<button class="edit" data-id="${currentPost._id}">Edit Post</button>
 			`)
 		}
 
@@ -67,9 +76,13 @@ const onShowSuccess = function (res) {
 
   // created a string of HTML, plugging in post values
   const postHTML = (`
-		<h4>title: ${store.post.title}</h4>
-		<p>Guide: ${store.post.guideDogName} Breed: ${store.post.breed} Years Together: ${store.post.yearsOfService}</p>
-			<p>Post:\n ${store.post.text}</p>
+		<div class="post">
+		<h2>${store.post.title}</h2>
+		<p>Guide: ${store.post.guideDogName}</p>
+		<p>Breed: ${store.post.breed} </p>
+		<p>Years Together: ${store.post.yearsOfService}</p>
+			<p>${store.post.text}</p>
+		</div>
   `)
 $('#userAlert').text('Post is below')
 	$('#post-display').html(postHTML)

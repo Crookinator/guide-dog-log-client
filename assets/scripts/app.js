@@ -104,4 +104,7 @@ $(() => {
 		$('#post-display').html('').hide()
 	})
 	$('#laws').on('click', postEvents.onLawsClick)
+	$('li').on('click', event => {
+		$('.navbar-toggler').click()
+	})
 })

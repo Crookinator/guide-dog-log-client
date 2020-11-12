@@ -142,6 +142,7 @@ Your animal must behave properly. An animal that engages in disruptive behavior 
 	`)
 	$('#laws-display').html(lawHTML).show()
 	$('#userAlert').text('Laws are below')
+		$('#createNewPost').hide()
 
 }
 

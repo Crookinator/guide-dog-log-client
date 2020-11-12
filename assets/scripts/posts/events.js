@@ -77,7 +77,7 @@ $('#post-display').html('').hide()
 	
 	// create the update html form
 	const updateHTML = (`
-		
+		<form  name="updatePostForm">
 				<fieldset>
 					<legend>Update Post (fields marked with * are required)</legend> <label for="title">Title(*):</label><input required="" id="title" type="text" name="post[title]" value="${store.post.title}">
 		<label for="guideDogName">Guide's Name:</label><input id='guideDogName' type="text" name="post[guideDogName]" value="${store.post.guideDogName}"> 
@@ -86,15 +86,15 @@ $('#post-display').html('').hide()
 		<label for="postText">Post(*):</label>
 		<input required="" id='postText' type="text" name="post[text]" value="${store.post.text}">
 		<input class='uiButton' type="submit" id="subUpdateBtn" value="Update Post">
- 
 				</fieldset>
+		</form>
 	`)
 	//inject updateHTML into the display-update-form div
-	$('#display-update-form').html(updateHTML)
+	$('#updatePostForm').html(updateHTML)
 	
 	// if this is a secondary edit enable the form to be editable
 	$('#subUpdateBtn').prop('disabled', false)
-	$('#display-update-form input').prop('disabled', false)
+	$('#updatePostForm input').prop('disabled', false)
 	
 	
 }

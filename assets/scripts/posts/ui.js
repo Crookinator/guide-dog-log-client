@@ -105,7 +105,7 @@ const onUpdateSuccess = function () {
 
   // disable the update button and clear the form  to prevent further edits
 	$('#subUpdateBtn').prop('disabled', true)
-	$('#display-update-form input').prop('disabled', true)
+	$('#updatePostForm input').prop('disabled', true)
 	
 }
 

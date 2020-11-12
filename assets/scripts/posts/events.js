@@ -79,11 +79,11 @@ $('#post-display').html('').hide()
 	const updateHTML = (`
 		<form  name="updatePostForm">
 				<fieldset>
-					<legend>Update Post (fields marked with * are required)</legend> <label for="title">Title(*):</label><input required="" id="title" type="text" name="post[title]" value="${store.post.title}">
-		<label for="guideDogName">Guide's Name:</label><input id='guideDogName' type="text" name="post[guideDogName]" value="${store.post.guideDogName}"> 
-		<label for="yearsOfService">Years in Service:</label><input id='yearsOfService' type="text" name="post[yearsOfService]" value="${store.post.yearsOfService}"> 
-		<label for="breed">Breed:</label><input id='breed' type="text" name="post[breed]" value="${store.post.breed}"> 
-		<label for="postText">Post(*):</label>
+					<legend>Update Post</legend> <label for="title">Title:</label><input required="" id="title" type="text" name="post[title]" value="${store.post.title}">
+		<label for="guideDogName">Guide's Name:</label><input required="" id='guideDogName' type="text" name="post[guideDogName]" value="${store.post.guideDogName}"> 
+		<label for="yearsOfService">Years in Service:</label><input required="" id='yearsOfService' type="text" name="post[yearsOfService]" value="${store.post.yearsOfService}"> 
+		<label for="breed">Breed:</label><input required="" id='breed' type="text" name="post[breed]" value="${store.post.breed}"> 
+		<label for="postText">Post:</label>
 		<input required="" id='postText' type="text" name="post[text]" value="${store.post.text}">
 		<input class='uiButton' type="submit" id="subUpdateBtn" value="Update Post">
 				</fieldset>

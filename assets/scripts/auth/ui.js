@@ -20,6 +20,7 @@ const signInSuccess = function(res) {
   // save the user in the api response to the store object
   store.user = res.user
 	postEvents.home()
+	$('#home-display').show()
 	$('#userAlert').text(`Sign-in Successful`)
 	$('.nv').show()
 	$('#signInForm').hide()
@@ -44,12 +45,12 @@ const onChangePasswordFailure = function () {
 
 // on successful sign out
 const onSignOutSuccess = function () {
-  $('#userAlert').text('Sign out successful. See you next time ' + store.user.email + '!')
   store.user = null
 	store.post = null
 	$('#signInForm').show()
-	$('#home-display').html('').hide()
-	$('#laws-display').html('').hide()
+	$('#createNewPost').hide()
+	$('#home-display').hide()
+	$('#laws-display').hide()
 	resetForms()
 }
 

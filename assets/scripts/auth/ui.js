@@ -51,6 +51,7 @@ const onSignOutSuccess = function () {
 	$('#createNewPost').hide()
 	$('#home-display').hide()
 	$('#laws-display').hide()
+	$('.nv').hide()
 	resetForms()
 }
 

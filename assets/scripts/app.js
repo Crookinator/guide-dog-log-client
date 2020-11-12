@@ -42,16 +42,16 @@ const postHandlers= function () {
 	const createHTML = (`
 		<form name="createPostForm">
 						<fieldset>
-							<legend>Create Post (fields marked with * are required)</legend>
-							<label for="title">Title(*):</label>
+							<legend>Create Post)</legend>
+							<label for="title">Title:</label>
 							<input required="" id="title" type="text" name="post[title]" placeholder="Title">
 							<label for="guideDogName">Guide's Name:</label>
-							<input id='guideDogName' type="text" name="post[guideDogName]" placeholder="Enter Dog's Name here">
+							<input required='' id='guideDogName' type="text" name="post[guideDogName]" placeholder="Enter Dog's Name here">
 							<label for="yearsOfService">Years in Service:</label>
-							<input id='yearsOfService' type="text" name="post[yearsOfService]" placeholder="Enter working years here">
+							<input required='' id='yearsOfService' type="text" name="post[yearsOfService]" placeholder="Enter working years here">
 							<label for="breed">Breed:</label>
-							<input id='breed' type="text" name="post[breed]" placeholder="Enter breed here">
-							<label for="postText">Post(*):</label>
+							<input required='' id='breed' type="text" name="post[breed]" placeholder="Enter breed here">
+							<label for="postText">Post:</label>
 							<input required="" id='postText' type="text" name="post[text]" placeholder="Whats on your mind">
 							<input class='uiButton' id='createSubmit' type="submit" value="Create Post">
 						</fieldset>

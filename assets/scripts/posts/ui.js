@@ -13,6 +13,7 @@ const onIndexSuccess = function (res) {
 
 	$('#createNewPost').show()
 	$('#createPostForm').hide()
+	$('#updatePostForm').trigger('reset').hide()
 	$('#home-display').html('').hide()
 	$('#laws-display').html('').hide()
 	$('.settings').hide()
@@ -142,6 +143,7 @@ Your animal must behave properly. An animal that engages in disruptive behavior 
 	`)
 	$('#laws-display').html(lawHTML).show()
 		$('#createNewPost').hide()
+		$('#updatePostForm').trigger('reset').hide()
 	
 	$('#userAlert').text('Laws are below')
 

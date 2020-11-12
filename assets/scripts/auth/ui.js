@@ -49,6 +49,7 @@ const onSignOutSuccess = function () {
 	store.post = null
 	$('#signInForm').show()
 	$('#createNewPost').hide()
+	$('#updatePostForm').trigger('reset').hide()
 	$('#home-display').hide()
 	$('#laws-display').hide()
 	$('.nv').hide()

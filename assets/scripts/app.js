@@ -27,6 +27,7 @@ const uiHandlers = function () {
 	$('.formHomeBtn').on('click', event => {
 		$('.dimmed').prop('disabled', false)
 		$('#laws-display').html('').hide()
+		$('#updatePostForm').trigger('reset').hide()
 		$('#home-display').html('').show()
 		$('#post-display').html('').hide()
 		$('#createNewPost').hide()
@@ -97,6 +98,7 @@ $(() => {
 		$('.settings').show()
 		$('#showChangePassword').show()
 		$('.editPostUi').hide()
+		$('#updatePostForm').trigger('reset').hide()
 		$('#home-display').html('').hide()
 		$('#laws-display').html('').hide()
 		$('#changePasswordForm').hide()

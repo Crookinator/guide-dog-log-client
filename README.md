@@ -57,3 +57,6 @@ The users to comments resource will be a one to many relationship as 1 user can 
 
 I will need to have a user route and comment route. I will need to be able to set relationships with the user route and comment routes. I will need to establish CRUD endpoints for the comments in order to achieve the user stories. 
 
+
+## Future Plans
+Next I would like to start building out the "profile" for the user. I would like to connect to additional keys on the User model to access preferences and other information that will load on successful sign-in. I would also like to address the footer of the webpage and have it not interfere with the UI. 

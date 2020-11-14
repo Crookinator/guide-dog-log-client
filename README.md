@@ -1,26 +1,35 @@
-## See the API here:
+# Related Links
+## API Repo
 https://github.com/Crookinator/guide-dog-log-api 
 
-# Full Stack Project Practice
+## Deployed Links
+Client:
+https://crookinator.github.io/guide-dog-log-client/ 
+API:
+https://mighty-hamlet-83462.herokuapp.com
 
-Be prepared to discuss these items with a consultant during a 1 on 1.
+# Technologies Used
+	- BootStrap
+	- Jquery
+	-HTML
+	- JavaScript
+	- GIT
+	- GITHUB
+	- TextMate (editor)
 
-You may use GitHub, PowerPoint, Keynote, or any other tools you desire to
-complete any part of this.
-
-## Project Idea
+# Project Idea
 An app to serve as a forum for guide dog users. This forum should also reference basic laws to help a guide dog user in situations where they may need to reference the laws. 
 
 ## User stories
 
-As a user I would like to sign-up and sign-in
-As a user I'd like to change my password.
-As a user I would like to reference the guide dog laws
-As a user I would like to leave a comment on my own experiences as a guide dog owner
-As a user I would like to be able to reference my posts
-As a user I would like to be able to edit and delete my posts
-As a user I would like to be able to see others posts
-As a user I would like to be able to sign out
+	- As a user I would like to sign-up and sign-in
+	- As a user I'd like to change my password.
+	- As a user I would like to reference the guide dog laws
+	- As a user I would like to leave a post on my own experiences as a guide dog owner
+	- As a user I would like to be able to reference my posts
+	- As a user I would like to be able to edit and delete my posts
+	- As a user I would like to be able to see others posts
+	- As a user I would like to be able to sign out
 
 
 ## Wireframes
@@ -29,6 +38,11 @@ Landing screen will have the sign-in form and a button to access sign up form.
 Upon successful sign in/up the main screen will load with the main body of the app having a navbar for settings which will contain the change password UI, sign out, community posts, home,  and see laws.
 The community posts view will view all comments and a button that activates a  form to create a new post.
 The view laws view will have an overview of laws pertaining to guide dogs and a video linked from YouTube that goes over the Air Carrier Access Act (ACAA).
+
+## ERD
+User -|--< Post 
+This is referencing a User and that it is a 1 to many relationship. User to Posts. 
+
 
 
 ## Resources

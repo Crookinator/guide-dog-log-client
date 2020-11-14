@@ -30,7 +30,7 @@ const signInSuccess = function(res) {
 
 // what happens with failed sign in
 const signInFailure = function() {
-	console.log('error')
+	$('#userAlert').text('Problem Signing In, please try again')
 }
 
 // what happens on successful change password success

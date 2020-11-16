@@ -20,6 +20,7 @@ const authHandlers = function () {
 		$('#post-display').html('').hide()
 		$('.settings').hide()
 		$('#changePasswordForm').show()
+		$('#changePasswordForm input').prop('disabled', false)
 	})
 	
 }

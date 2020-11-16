@@ -115,7 +115,7 @@ const onCreateSuccess = function () {
   $('#userAlert').text('Post has been Created! Click "Home" to return to the main screen.')
 
   // disable the form inputs
-  $('#createSubmit').prop('disabled', true).addClass('dimmed')
+  $('#createPostForm input').prop('disabled', true)
 }
 
 // error msg if something goes wrong

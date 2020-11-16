@@ -37,6 +37,7 @@ const signInFailure = function() {
 const onChangePasswordSuccess = function () {
 	$('#userAlert').text('Password changed successfully!')
 	$('#changePasswordForm').trigger('reset')
+	$('#changePasswordForm input').prop('disabled', true)
 }
 
 // what happens on failed change password

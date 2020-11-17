@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Guide Dog Log</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+		<body>
+		<div id="page-container">
+		<div id="content-wrap">
+			<header id="appHeader">
+						<h1>Guide Dog Log</h1>
+						<p>A forum for guide dog owners to share their thoughts and experiences.</p>
+						<br>
+			</header>
+
+<!--Navbar  -->
+						<div class='mx-auto nv' style="display: none"> <nav class="navbar  sticky-top navbar-expand-md  navbar-dark bg-dark">
+						  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+						    <span class="navbar-toggler-icon"></span>
+						  </button>
+						  <div class="collapse navbar-collapse" id="navbarNav">
+						    <ul class="navbar-nav">
+						      <li class="nav-item ">
+						        <a class="nav-link formHomeBtn" href="#">Home</a>
+						      </li>
+						      <li class="nav-item">
+						        <a class="nav-link" id='indexPosts' href="#">Community Posts</a>
+						      </li>
+						      <li class="nav-item">
+						        <a class="nav-link" id='laws' href="#">Access Laws</a>
+						      </li>
+						      <li class="nav-item">
+																        <a class="nav-link" id='settings' href="#">Settings</a>
+						      </li>
+						      <li class="nav-item">
+<a class="nav-link" id='signOutBtn' href="#">Sign Out</a>
+
+						      </li>
+								</ul>
+						  </div>
+						</nav></div>
+
+<!--User Alert Field & Sign Up Form -->
+				<div style='display: hidden'>
+					<h3 aria-live='assertive' class='h3' id='userAlert'></h3>
+				</div>
+			<section class='authForms'>
+			
+				<form style="display: none" class='forms'  id="signUpForm" name="signUpForm">
+					<fieldset>
+						<legend>Sign up</legend>
+						<label for="signUpEmail">Email</label>
+						<input required="" id="signUpEmail" type="email" name="credentials[email]">
+						<label for="signUpPassword">Password</label>
+						<input required="" id="signUpPassword" type="password" name="credentials[password]" placeholder="Password">
+						<label for="signUpPassword_confirmation">Password Confirmation</label>
+						<input required="" id="signUpPassword_confirmmation" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+						<input class='uiButton' type="submit"value='Sign up'> <input type='button' class='uiButton' id='showSignIn' value='Sign in'>
+					</fieldset>
+				</form>
+			</section>
+
+<!--Sign In Form -->
+			<section class='authForms'>
+					<form style="display: none" class='forms' id="signInForm" name="signInForm">
+						<fieldset>
+							<legend>Sign in</legend>
+							<label for="signInEmail">Email</label>
+							<input required="" id="signInEmail" type="email" name="credentials[email]" placeholder="Email">
+							<label for="signInPassword">Password</label>
+							<input required="" id="signInPassword" type="password" name="credentials[password]" placeholder="Password">
+							<input class='uiButton' type="submit"value='Sign in'>
+							<input class='uiButton' type='button' id='showSignUp' value='Sign up'>
+						</fieldset>
+					</form>
+			</section>
+
+<!--Change Password Form -->
+			<section class='authForms changePasswordForm'>
+					<form style="display: none" class='forms changePasswordForm' id="changePasswordForm" name="changePasswordForm">
+						<fieldset>
+							<legend>Change Password</legend>
+							<label for="oldPassword">Old Password:</label>
+							<input required="" id="oldPassword" type="password" name="passwords[old]" placeholder="Old Password">
+							<label for="newPassword">New Password:</label>
+							<input required="" id='newPassword' type="password" name="passwords[new]" placeholder="New Password">
+							<input class='uiButton' type="submit" value="Change Password">
+						</fieldset>
+					</form>
+			</section>
+
+<!--Create Post Form -->
+			<section class='authForms'>
+					<form style="display: none" class='forms' id="createPostForm"> 
+					</form>
+			</section>
+
+<!--Update Post Form -->
+			<section class='authForms'>
+				<form style="display: none" class='forms' id="updatePostForm">
+				</form>
+			</section>
+
+<!-- Settings Form -->
+			<section style='display: none' class='authForms settings'>
+				<form class='forms settings'>
+					<fieldset>
+						<legend>Settings</legend>
+							<input type='button' class='uiButton' id='showChangePassword' value='Change Password'>
+					</fieldset>
+				</form>
+			</section>
+			<div class='container-fluid row'>
+				<div  class='col-lg-12' id='laws-display'></div>
+			</div>
+
+
+			<div class="container-fluid row">
+			
+				<section class='postUi'>
+						<input style='display: none' type='button' class='ui uiButton' id='createNewPost' value='Create New Post'>
+
+<!--Laws Display and Home Display -->
+						<div id='home-display'></div>
+<!--Div to hold the HTML from the GET requests -->
+				<div style="display: none" id='post-display' class="ui container col-lg-4 postUi"></div>
+
+						<section style='display: none' class="editPostUi">
+					<form class='editPostUi'> <fieldset>
+									<legend>Update / Delete</legend>
+
+						<input type="button" class="uiButton" id="showUpdate" value="Update Post">
+						<input type="checkbox" id="validateDestroy" value="1">
+						<label for="validateDestroy">I understand that by clicking "Delete" my post is permanently deleted and can not be recovered</label>
+						<input disabled type="button" class="uiButton" id="destroyPost" value="Delete Post">
+						</fieldset>
+					</form>
+				</section>
+				</section>
+
+			</div>
+		</div>
+			<footer >
+				<div id='footertext'>
+					<p>This app has been created as a resource for persons with Guide Dogs. The term Guide Dog refers to any dog that is specially trained to assist a blind owner with orientation and mobility.</p>
+			</div>
+			</footer>
+		</div>
+		</body>
+</html>

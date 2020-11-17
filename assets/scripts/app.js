@@ -44,7 +44,7 @@ const postHandlers= function () {
 	const createHTML = (`
 		<form name="createPostForm">
 						<fieldset>
-							<legend>Create Post)</legend>
+							<legend>Create Post</legend>
 							<label for="title">Title:</label>
 							<input required="" id="title" type="text" name="post[title]" placeholder="Title">
 							<label for="guideDogName">Guide's Name:</label>
